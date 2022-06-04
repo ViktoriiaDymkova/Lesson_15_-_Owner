@@ -5,7 +5,7 @@ import org.aeonbits.owner.Config;
 @Config.Sources({
         "classpath:${chromeOrSelenoid}.properties"
 })
-public interface chromeOrSelenoidConfig   extends Config {
+public interface chromeOrSelenoidConfig    extends Config {
     @Key("browser.name")
     @DefaultValue("CHROME")
     String browser();
