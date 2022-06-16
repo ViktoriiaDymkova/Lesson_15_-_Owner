@@ -1,6 +1,6 @@
 package io.qaguru.owner;
 
-import io.qaguru.owner.hwconfig.chromeOrSelenoidConfig;
+import io.qaguru.owner.hwconfig.СhromeOrSelenoidConfig;
 import org.aeonbits.owner.ConfigFactory;
 import org.junit.jupiter.api.Test;
 
@@ -9,11 +9,11 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class WebTest {
 
     @Test
-    public void TestLocalWeb(){
+    public void testLocalWeb(){
 
         System.setProperty("chromeOrSelenoid","local");
 
-        chromeOrSelenoidConfig config = ConfigFactory.create(chromeOrSelenoidConfig.class, System.getProperties());
+        СhromeOrSelenoidConfig config = ConfigFactory.create(СhromeOrSelenoidConfig.class, System.getProperties());
 
         assertThat(config.browser()).isEqualTo("CHROME");
         assertThat(config.version()).isEqualTo("101");
@@ -21,10 +21,10 @@ public class WebTest {
     }
 
     @Test
-    public void TestRemoteWeb(){
+    public void testRemoteWeb(){
         System.setProperty("chromeOrSelenoid","selenoid");
 
-        chromeOrSelenoidConfig config = ConfigFactory.create(chromeOrSelenoidConfig.class, System.getProperties());
+        СhromeOrSelenoidConfig config = ConfigFactory.create(СhromeOrSelenoidConfig.class, System.getProperties());
 
         assertThat(config.browser()).isEqualTo("CHROME");
         assertThat(config.version()).isEqualTo("100");
